@@ -5,7 +5,7 @@ const app = express()
 const routes = require('./api/routes.main')
 const PORT = process.env.PORT || 3000
 // Middleware
-// require('./config/middleware')
+require('./config/middleware')
 
 // // Routes
 // app.use('/api', routes)
