@@ -1,16 +1,22 @@
 const Sequelize = require('sequelize')
 
-const DBConnection = new Sequelize('postgres://shurepmn:6d4imE8aMzjoDPk2hglDH9IWB08PzpMc@stampy.db.elephantsql.com:5432/shurepmn')
+// Please create a credential.json file with your username and password for your cloud DB.
+// Refer to sampleCredentials.json
+const creds = require('./credentials')
 
-//Connection testing
+const DBURL = `postgres://${creds.username}:${creds.password}@stampy.db.elephantsql.com:5432/${creds.username}`
+
+const DBConnection = new Sequelize(DBURL)
+
+// Connection testing
 
 DBConnection
     .authenticate()
-    .then(()=> {
-        console.log('DB connection successful')
+    .then(() => {
+      console.log('DB connection successful')
     })
-    .catch((err)=> {
-        console.log('DB connection ERROR: ', err)
+    .catch((err) => {
+      console.log('DB connection ERROR: ', err)
     })
 
-    module.exports = DBConnection
+module.exports = DBConnection
