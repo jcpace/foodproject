@@ -19,13 +19,14 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
-    "expo": "^20.0.0",
+    "cors": "^2.8.4",
     "express": "^4.15.4",
     "morgan": "^1.8.2",
-    "react-native": "^0.47.0",
-    "sequelize": "^4.7.5",
+    "path": "^0.12.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.12"
+    "react-native": "^0.47.0",
+    "react-scripts": "1.0.12",
+    "sequelize": "^4.7.5"
   }
 }
