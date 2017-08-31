@@ -2,7 +2,9 @@ const Sequelize = require('sequelize')
 const db = require('../../config/db.config.js')
 
 const User = db.define('user', {
-  
+  isVendor: {
+    type: Sequelize.INTEGER
+  },
   profile_image_url: {
     type: Sequelize.STRING
   },
@@ -54,7 +56,7 @@ const User = db.define('user', {
 })
   // relationships
 
-//User.hasMany(Review, {foreignKey: 'userId'})
+// User.hasMany(Review, {foreignKey: 'userId'})
 
 User.sync().then(() => {
   console.log('USER table successfully created.')
