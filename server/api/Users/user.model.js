@@ -1,17 +1,20 @@
 const User = require('./user.schema')
 const express = require('express')
 const router = express.Router()
+const bcrypt = require('bcrypt')
 
 module.exports = {
 
   signup: (req, res) => {
+    let salt = bcrypt.genSaltSync(10)
+    let hash = bcrypt.hashSync(req.body.password, salt)
     User
             .create({
               firstName: req.body.firstName,
               lastName: req.body.lastName,
               userName: req.body.userName,
               email: req.body.email,
-              password: req.body.password
+              password: hash
             })
         .then((user) => {
           res.send(user)
