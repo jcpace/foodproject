@@ -6,26 +6,58 @@ const bcrypt = require('bcrypt')
 module.exports = {
 
   signup: (req, res) => {
-    let salt = bcrypt.genSaltSync(10)
-    let hash = bcrypt.hashSync(req.body.password, salt)
-    User
+    console.log('req body: ', req.body)
+    bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.hash(req.body.password, salt, (err, hash) => {
+        if (err) {
+          res.send(err) && console.log('error in signup hash')
+        } else {
+          User
             .create({
+              isVendor: req.body.isVendor,
+              profile_image_url: req.body.profile_image_url,
               firstName: req.body.firstName,
               lastName: req.body.lastName,
-              userName: req.body.userName,
               email: req.body.email,
-              password: hash
+              password: hash,
+              userName: req.body.userName,
+              phoneNumber: req.body.phoneNumber,
+              houseNumber: req.body.houseNumber,
+              streetName: req.body.streetName,
+              unitType: req.body.unitType,
+              unitNumber: req.body.unitNumber,
+              city: req.body.city,
+              state: req.body.state,
+              zipCode: req.body.zipCode,
+              latitude: req.body.latitude,
+              longitude: req.body.longitude
+
             })
         .then((user) => {
           res.send(user)
         })
+        }
+      })
+    })
   },
   login: (req, res) => {
     User
-          .findOne({where: {userName: req.body.userName, password: req.body.password}})
-          .then((user) => {
-            res.json(user)
+        .findOne({where: {userName: req.body.userName}})
+        .then((user) => {
+          console.log('USER: ', user.password)
+          bcrypt.compare(req.body.password, user.password, (err, res) => {
+            if (err) {
+              return err
+            }
+            if (res === true) {
+              console.log('TTTREEEEE')
+              res.json(user)
+            } else {
+              console.log('NOTTREEEE')
+              res.send('Incorrect Password')
+            }
           })
+        })
           .catch((err) => {
             if (err) {
               console.log('ERROR logging in user: ', err)

@@ -20,11 +20,11 @@ const User = db.define('user', {
   password: {
     type: Sequelize.STRING
   },
-  phoneNumber: {
-    type: Sequelize.INTEGER
-  },
   userName: {
     type: Sequelize.STRING
+  },
+  phoneNumber: {
+    type: Sequelize.INTEGER
   },
   houseNumber: {
     type: Sequelize.INTEGER
