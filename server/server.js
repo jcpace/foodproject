@@ -3,10 +3,14 @@ require('./config/db.config.js')
 const express = require('express')
 const app = express()
 const routes = require('./api/routes.main')
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
 
 // Middleware
 require('./config/middleware')(app, express)
+
+app.get('/', (req, res) => {
+  console.log('Cookies: ', req.cookies)
+})
 
 // Routes
 app.use('/api', routes)

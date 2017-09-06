@@ -51,12 +51,13 @@ module.exports = {
             }
             if (res === true) {
               console.log('TTTREEEEE')
-              res.json(user)
+              
             } else {
               console.log('NOTTREEEE')
               res.send('Incorrect Password')
             }
           })
+          res.send(user)
         })
           .catch((err) => {
             if (err) {
