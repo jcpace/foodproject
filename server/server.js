@@ -3,7 +3,7 @@ require('./config/db.config.js')
 const express = require('express')
 const app = express()
 const routes = require('./api/routes.main')
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8000
 
 // Middleware
 require('./config/middleware')(app, express)

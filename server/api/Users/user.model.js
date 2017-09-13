@@ -15,23 +15,10 @@ module.exports = {
           User
             .create({
               isVendor: req.body.isVendor,
-              profile_image_url: req.body.profile_image_url,
               firstName: req.body.firstName,
               lastName: req.body.lastName,
               email: req.body.email,
-              password: hash,
-              userName: req.body.userName,
-              phoneNumber: req.body.phoneNumber,
-              houseNumber: req.body.houseNumber,
-              streetName: req.body.streetName,
-              unitType: req.body.unitType,
-              unitNumber: req.body.unitNumber,
-              city: req.body.city,
-              state: req.body.state,
-              zipCode: req.body.zipCode,
-              latitude: req.body.latitude,
-              longitude: req.body.longitude
-
+              password: hash
             })
         .then((user) => {
           res.send(user)
@@ -51,7 +38,6 @@ module.exports = {
             }
             if (res === true) {
               console.log('TTTREEEEE')
-              
             } else {
               console.log('NOTTREEEE')
               res.send('Incorrect Password')
