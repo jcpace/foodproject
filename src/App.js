@@ -11,6 +11,7 @@ class App extends Component {
           <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to your React</h2>
         </div>
+        
         <p className='App-intro'>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,5 +19,19 @@ class App extends Component {
     )
   }
 }
+
+// loadMap(){
+  
+   
+//       let latLng = new google.maps.LatLng(this.bookInfo.lat, this.bookInfo.lon);
+//       let mapOptions = {
+//         center: latLng,
+//         zoom: 11,
+//         mapTypeId: google.maps.MapTypeId.ROADMAP
+//       }
+  
+//       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+  
+//     }
 
 export default App
