@@ -6,18 +6,16 @@ import './App.css'
 class App extends Component {
   render () {
     return (
-      <div className='App'>
-        <div className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <h2>Welcome to your React</h2>
+      <div>
+        <form className='query' onSubmit={this.searchGiphy}>
+          <input className='input' type="text" value={this.state.value} onChange={this.handleChange} placeholder='SEARCH' />
+        </form>
+        <div className='gifList'>
+          {this.state.gifs}
         </div>
-        
-        <p className='App-intro'>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     )
-  }
+ }
 }
 
 // loadMap(){
