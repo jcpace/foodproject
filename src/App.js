@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Route, Switch } from 'react-router'
+// import { Router, Route, Switch } from 'react-router'
 import './App.css'
 
 class App extends Component {
@@ -18,10 +18,13 @@ class App extends Component {
   handleChange = event => {
     this.setState({value: event.target.value});
   }
+  submitSearch = () => {
+    console.log('search')
+  }
   render () {
     return (
       <div>
-        <form className='query' onSubmit={}>
+        <form className='query' onSubmit={this.submitSearch}>
           <input className='input' type='text' value={this.state.value} onChange={this.handleChange} placeholder='SEARCH' />
         </form>
         <div className=''>
