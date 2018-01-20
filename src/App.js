@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import { Router, Route, Switch } from 'react-router'
-import './App.css'
+import { Router, Route, Switch } from 'react-router'
+import './App.scss'
 
 class App extends Component {
   constructor () {
