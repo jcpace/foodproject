@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Router, Route, Switch } from 'react-router'
 import './App.scss'
+import Login from './components/login/Login'
 
 class App extends Component {
   constructor () {
@@ -23,14 +24,7 @@ class App extends Component {
   }
   render () {
     return (
-      <div>
-        <form className='query' onSubmit={this.submitSearch}>
-          <input className='input' type='text' value={this.state.value} onChange={this.handleChange} placeholder='SEARCH' />
-        </form>
-        <div className=''>
-          {}
-        </div>
-      </div>
+      <Login />
     )
   }
 }
