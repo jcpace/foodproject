@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.scss'
 import Login from './components/login/Login'
 
-const URL = 
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -14,28 +14,7 @@ class App extends Component {
     }
   }
 
-  login = () => {
-    gifURLArray = []
-    axios.get(giphyTrendingURL, {params: {
-      api_key: API_KEY,
-      limit: 15
-    }})
-    .then(response => {
-      let imageArrTrending = response.data.data
-      imageArrTrending.forEach(item => {
-        gifURLArray.push(item.images.downsized.url)
-      })
-      let gifs = gifURLArray.map((gif, i) => { 
-        return <img src={gif} alt='' key={i} /> 
-      })
-      this.setState({
-        gifs: gifs
-      })
-    })
-    .catch(error => {
-      console.log('Axios ERROR: ', error)
-    })
-  }
+  
 
   render () {
     return (
