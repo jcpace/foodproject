@@ -14,7 +14,6 @@
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.0",
     "react-dom": "^16.2.0",
-    "react-router": "^4.2.0",
     "react-scripts": "1.0.12",
     "redux": "^3.7.2",
     "sequelize": "^4.7.5"
