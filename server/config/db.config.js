@@ -4,7 +4,7 @@ const Sequelize = require('sequelize')
 // Refer to sampleCredentials.json
 const creds = require('./credentials')
 
-const DBURL = `postgres://${creds.username}:${creds.password}@stampy.db.elephantsql.com:5432/${creds.username}`
+//const DBURL = `postgres://${creds.username}:${creds.password}@stampy.db.elephantsql.com:5432/${creds.username}`
 
 // const sequelize = new Sequelize(
 //   {
@@ -18,7 +18,7 @@ const DBURL = `postgres://${creds.username}:${creds.password}@stampy.db.elephant
 //   }
 // )
 
-const sequelize = new Sequelize('db', 'jpace', {
+const sequelize = new Sequelize('db', 'jpace', null, {
   dialect: 'postgres'
 })
 
