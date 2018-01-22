@@ -23,7 +23,7 @@ const sequelize = new Sequelize(DBURL, {
   operatorsAliases: false
 })
 
-// Connection testing
+// DB Connection Testing
 
 sequelize
     .authenticate()
