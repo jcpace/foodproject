@@ -6,11 +6,25 @@ const creds = require('./credentials')
 
 const DBURL = `postgres://${creds.username}:${creds.password}@stampy.db.elephantsql.com:5432/${creds.username}`
 
-const DBConnection = new Sequelize(DBURL)
+// const sequelize = new Sequelize(
+//   {
+//     database: 'tester',
+//     username: 'jpace',
+//     password: null,
+//     host: 'localhost',
+//     port: 8001,
+//     dialect: 'postgres',
+//     operatorsAliases: false
+//   }
+// )
+
+const sequelize = new Sequelize('db', 'jpace', {
+  dialect: 'postgres'
+})
 
 // Connection testing
 
-DBConnection
+sequelize
     .authenticate()
     .then(() => {
       console.log('DB connection successful')
@@ -19,4 +33,4 @@ DBConnection
       console.log('DB connection ERROR: ', err)
     })
 
-module.exports = DBConnection
+module.exports = sequelize

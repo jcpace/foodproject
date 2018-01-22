@@ -4,9 +4,9 @@ const express = require('express')
 const app = express()
 const routes = require('./api/routes.main')
 const PORT = process.env.PORT || 8000
-const fs = require('fs')
-const https = require('https')
-const HTTPS_PORT = 1443
+// const fs = require('fs')
+// const https = require('https')
+// const HTTPS_PORT = 1443
 
 // Middleware
 require('./config/middleware')(app, express)
