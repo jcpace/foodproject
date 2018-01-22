@@ -1,6 +1,6 @@
-Food Project
+Polity (working title)
 
-Built with React. Redux in progress
+Built with React. A side project
 
 ## Table of Contents
 
