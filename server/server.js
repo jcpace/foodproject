@@ -1,19 +1,20 @@
-'use strict'
-require('./config/db.config.js')
-const express = require('express')
-const app = express()
-const routes = require('./api/routes.main')
-const PORT = process.env.PORT || 8000
+require('./config/db.config.js');
+const express = require('express');
+
+const app = express();
+const routes = require('./api/routes.main');
+
+const PORT = process.env.PORT || 8000;
 // const fs = require('fs')
 // const https = require('https')
 // const HTTPS_PORT = 1443
 
 // Middleware
-require('./config/middleware')(app, express)
+require('./config/middleware')(app, express);
 
 app.get('/', (req, res) => {
-  console.log('Cookies: ', req.cookies)
-})
+  console.log('Cookies: ', req.cookies);
+});
 
 // HTTPS
 // let secureServer = https.createServer({
@@ -25,10 +26,10 @@ app.get('/', (req, res) => {
 //   })
 
 // Routes
-app.use('/api', routes)
+app.use('/api', routes);
 
 app.listen(PORT, () => {
-  console.log('SERVER listening on port: ', PORT)
-})
+  console.log('SERVER listening on port: ', PORT);
+});
 
-module.exports = app
+module.exports = app;

@@ -4,7 +4,9 @@ const Sequelize = require('sequelize');
 // Refer to sampleCredentials.json
 const creds = require('./credentials');
 
-const DBURL = `postgres://${creds.username}:${creds.password}@stampy.db.elephantsql.com:5432/${creds.username}`;
+const DBURL = `postgres://${creds.username}:${
+  creds.password
+}@stampy.db.elephantsql.com:5432/${creds.username}`;
 
 // possible local running of DB. Still working on getting it to connect. For now, use uri
 // const sequelize = new Sequelize(
@@ -20,18 +22,18 @@ const DBURL = `postgres://${creds.username}:${creds.password}@stampy.db.elephant
 // )
 
 const sequelize = new Sequelize(DBURL, {
-  operatorsAliases: false
+  operatorsAliases: false,
 });
 
 // DB Connection Testing
 
 sequelize
-    .authenticate()
-    .then(() => {
-      console.log('DB connection successful')
-    })
-    .catch((err) => {
-      console.log('DB connection ERROR: ', err)
-    });
+  .authenticate()
+  .then(() => {
+    console.log('DB connection successful');
+  })
+  .catch(err => {
+    console.log('DB connection ERROR: ', err);
+  });
 
 module.exports = sequelize;
