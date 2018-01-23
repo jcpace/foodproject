@@ -1,3 +1,5 @@
+/*global google*/
+
 import React, { Component } from 'react';
 import './App.scss';
 import Login from './components/login/Login';
@@ -14,7 +16,7 @@ class App extends Component {
     };
   }
   initMap() {
-    this.map = new google.maps.Map(document.getElementById('map'), {
+    this.map = new google.maps.Map(document.getElementsByClassName('map'), {
       center: { lat: -34.397, lng: 150.644 },
       zoom: 8,
     });
@@ -24,7 +26,7 @@ class App extends Component {
     return (
       <div>
         <Login />
-        <div>{map}</div>
+        <div className='map'>{this.map}</div>
       </div>
     );
   }
