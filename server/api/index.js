@@ -1,6 +1,5 @@
 const db = require('../config/db.config');
-const express = require('express')
-;
+const express = require('express');
 const router = express.Router();
 const user = require('./Users/index');
 const mainRoutes = require('./routes.main');
