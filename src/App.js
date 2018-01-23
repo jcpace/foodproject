@@ -1,27 +1,19 @@
-import React, { Component } from 'react'
-import './App.scss'
-import Login from './components/login/Login'
-
+import React, { Component } from 'react';
+import './App.scss';
+import Login from './components/login/Login';
 
 class App extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
       vendors: [],
-      value: ''
-
-    }
+      value: '',
+    };
   }
 
-  
-
-  render () {
-    return (
-
-      <Login />
-
-    )
+  render() {
+    return <Login />;
   }
 }
 
@@ -38,4 +30,4 @@ class App extends Component {
 
 //     }
 
-export default App
+export default App;
