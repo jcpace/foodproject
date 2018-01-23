@@ -1,10 +1,9 @@
-/*global google*/
+/* global google */
+/* global document */
 
 import React, { Component } from 'react';
 import './App.scss';
 import Login from './components/login/Login';
-
-let map;
 
 class App extends Component {
   constructor(props) {
@@ -12,12 +11,18 @@ class App extends Component {
 
     this.state = {
       value: '',
+      map: undefined,
     };
   }
-  initMap() {
-    this.map = new google.maps.Map(document.getElementsByClassName('map'), {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 8,
+  componentDidMount() {
+    this.initMap();
+  }
+  initMap = () =>{
+    this.setState({
+      map: new google.maps.Map(document.getElementsByClassName('mapp'), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+      }),
     });
   }
 
@@ -25,7 +30,7 @@ class App extends Component {
     return (
       <div>
         <Login />
-        <div className='map'>{this.map}</div>
+        <div className="mapp">{this.map}</div>
       </div>
     );
   }
