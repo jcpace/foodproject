@@ -2,7 +2,7 @@
 /* global document */
 
 import React, { Component } from 'react';
-import './App.scss';
+import './App.css';
 import Login from './components/login/Login';
 
 let map;
