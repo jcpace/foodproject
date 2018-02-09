@@ -1,11 +1,9 @@
 import axios from 'axios';
 
-export function fetch() {
+export function fetchSomething() {
 
- 
-
-  return {
-    type: FETCH_WEATHER,
-    payload: request,
+ return {
+    type: TYPE,
+    payload: payload,
   };
 }
